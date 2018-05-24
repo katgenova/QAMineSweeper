@@ -2,10 +2,16 @@ public class mainMineSweeper {
 
     public static void main(String[] args) {
 
-        Grid emptyGrid = new Grid();
+        Grid grid = new Grid();
 
-        emptyGrid.createEmptyGrid();
-        emptyGrid.printEmptyGrid();
+        grid.createEmptyGrid();
+        grid.printEmptyGrid();
+        for (int i = 0; i <10 ; i++) {
+            grid.createMine();
+
+        }
+
+
 
     }
 }
