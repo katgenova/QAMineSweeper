@@ -37,11 +37,24 @@ public class Grid {
         }
     }
 
-    public void checkSpot(int positionI, int positionJ){
-        if (actualGrid[positionI][positionJ].equals("X")){
-            mineCounter++;
-            checkSpot(positionI+1,positionJ+1);
+    public void createMineTest(){
+        Random random = new Random();
+        int positionI = random.nextInt(8);
+        int positionJ = random.nextInt(8);
+        if (!(emptyGrid[positionI][positionJ].equals("X"))) {
+            emptyGrid[positionI][positionJ] = "[X]";
+        } else {
+            createMine();
         }
+    }
+
+    public String checkSpot(int positionI, int positionJ){
+        String spot = actualGrid[positionI][positionJ];
+        return spot;
+    }
+
+    public void checkArea(){
+        
     }
 
     public void printActualGrid() {   //Testing purposes only
@@ -52,5 +65,10 @@ public class Grid {
             System.out.println();
         }
     }
+
+//            if (actualGrid[positionI][positionJ].equals("X")){
+//        mineCounter++;
+//        checkSpot(positionI+1,positionJ+1);
+//    }
 
 }

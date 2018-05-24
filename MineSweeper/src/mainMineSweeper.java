@@ -5,11 +5,11 @@ public class mainMineSweeper {
         Grid grid = new Grid();
 
         grid.createEmptyGrid();
-        grid.printEmptyGrid();
         for (int i = 0; i <10 ; i++) {
-            grid.createMine();
+            grid.createMineTest();
 
         }
+        grid.printEmptyGrid();
 
 
 
