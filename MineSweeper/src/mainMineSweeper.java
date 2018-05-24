@@ -10,8 +10,8 @@ public class mainMineSweeper {
 
         }
         grid.printEmptyGrid();
-
-
+        System.out.print(grid.checkSpot(6,6));
+        System.out.print(grid.checkSpot(2,2));
 
     }
 }

@@ -39,8 +39,8 @@ public class Grid {
 
     public void createMineTest(){
         Random random = new Random();
-        int positionI = random.nextInt(8);
-        int positionJ = random.nextInt(8);
+        int positionI = random.nextInt(7);
+        int positionJ = random.nextInt(7);
         if (!(emptyGrid[positionI][positionJ].equals("X"))) {
             emptyGrid[positionI][positionJ] = "[X]";
         } else {
@@ -48,13 +48,32 @@ public class Grid {
         }
     }
 
-    public String checkSpot(int positionI, int positionJ){
-        String spot = actualGrid[positionI][positionJ];
-        return spot;
+    public boolean checkSpot(int positionI, int positionJ){
+        String spot = emptyGrid[positionI][positionJ];
+        if (spot.equals("[X]")){
+            return true;
+        }
+            return false;
     }
 
     public void checkArea(){
-        
+        for (int i = 0; i <row ; i++) {
+            for (int j = 0; j < col; j++) {
+                if(checkSpot(i,j)){
+                    mineCounter++;
+                    try {
+                        if (checkSpot(i - 1, j - 1)) {
+                            mineCounter++;
+                        } else if (checkSpot(i-1, j)){
+                            mineCounter++;
+                        }
+                    } catch (IndexOutOfBoundsException ee){
+                        continue;
+                    }
+                }
+
+            }
+        }
     }
 
     public void printActualGrid() {   //Testing purposes only
