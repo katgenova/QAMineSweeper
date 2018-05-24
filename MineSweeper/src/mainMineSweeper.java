@@ -2,9 +2,10 @@ public class mainMineSweeper {
 
     public static void main(String[] args) {
 
-        MineSweeper testGrid = new MineSweeper();
+        Grid emptyGrid = new Grid();
 
-        testGrid.createGrid();
-        testGrid.printGrid();
+        emptyGrid.createEmptyGrid();
+        emptyGrid.printEmptyGrid();
+
     }
 }
